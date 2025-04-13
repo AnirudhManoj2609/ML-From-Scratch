@@ -50,6 +50,7 @@ def log_loss(self,prediction,train_output):
     epsilon = 1e-15
     p = np.clip(prediction,epsilon,1 - epsilon)
     loss = -np.mean(train_output * np.log(p) + (1 - train_output) * np.log(1 - p))
+    return loss
 LogisticRegression.log_loss = log_loss
 
 
